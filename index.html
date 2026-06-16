@@ -53,6 +53,7 @@
     <nav aria-label="Primary navigation">
       <a href="#why">Why</a>
       <a href="#tracks">Tracks</a>
+      <a href="#dossier">Dossier</a>
       <a href="#signal">Signal</a>
       <a href="#gallery">Images</a>
     </nav>
@@ -121,8 +122,55 @@
           </div>
           <details class="lyrics-box" open>
             <summary>Lyrics</summary>
-            <pre id="lyricsText"></pre>
+            <div id="lyricsText" class="lyrics-grid"></div>
           </details>
+        </article>
+      </div>
+    </section>
+
+    <section class="section dossier-section" id="dossier" aria-labelledby="dossier-title">
+      <div class="section-heading">
+        <p class="section-code">ARCHIVE DOSSIER // VOX_LEAD</p>
+        <h2 id="dossier-title">The system kept records. Vox kept receipts.</h2>
+      </div>
+      <div class="dossier-grid">
+        <article class="dossier-card dev-note">
+          <p class="section-code">DEV NOTE // 05.17</p>
+          <h3>Why this transmission exists</h3>
+          <p>DEAD.AIR is for the people who were marked available through years when they were quietly disappearing. It is about the cost of being useful, the fog of surviving, and the strange courage it takes to become a person again after a system only measured your output.</p>
+          <p>This chapter does not make burnout beautiful. It documents the signal loss, then leaves a door open.</p>
+        </article>
+        <article class="dossier-card review-card">
+          <p class="section-code">PERFORMANCE REVIEW // EXTRACT</p>
+          <dl>
+            <div><dt>Strength</dt><dd>Maintains team stability during repeated disruption.</dd></div>
+            <div><dt>Concern</dt><dd>Over-identifies with responsibility for outcomes outside role control.</dd></div>
+            <div><dt>Manager note</dt><dd>Reliable. Adaptable. Too emotionally invested in people.</dd></div>
+            <div><dt>Employee response</dt><dd>People were the point.</dd></div>
+          </dl>
+        </article>
+        <article class="dossier-card journal-card">
+          <p class="section-code">OVERRIDE_MANAGER.LOG</p>
+          <blockquote>
+            <p>Vox continues to frame business decisions in human terms. This may create friction during restructuring. Recommend reduced scope, limited visibility, and careful monitoring of influence.</p>
+          </blockquote>
+          <span class="stamp">REASSIGNED</span>
+        </article>
+        <article class="dossier-card recovery-card">
+          <p class="section-code">RECOVERY PROTOCOL</p>
+          <ol>
+            <li>Name what happened.</li>
+            <li>Stop confusing silence with safety.</li>
+            <li>Find people who can hear the real signal.</li>
+            <li>Leave what requires you to disappear.</li>
+            <li>Return without becoming the old version.</li>
+          </ol>
+        </article>
+        <article class="dossier-card socials-card">
+          <p class="section-code">OPEN CHANNELS</p>
+          <a href="https://www.youtube.com/watch?v=vDiTufIlPPE&list=PLIE9jS6fj9PI" target="_blank" rel="noreferrer">YouTube Playlist</a>
+          <a href="https://github.com/drsparrow11/dead.air" target="_blank" rel="noreferrer">GitHub Archive</a>
+          <a href="https://www.youtube.com/@djdrsparrow" target="_blank" rel="noreferrer">@djdrsparrow</a>
         </article>
       </div>
     </section>
@@ -169,11 +217,6 @@
       <div class="gallery" id="galleryGrid"></div>
     </section>
   </main>
-
-  <footer class="site-footer">
-    <p>DEAD.AIR // The Vox Chronicles // SPARROW x ECHO</p>
-    <p>Creative note: AI-assisted tools were used in the creation of the music and/or visuals, with human direction, writing, editing, curation, and final creative choices by Sparrow.</p>
-  </footer>
 
   <script src="script.js"></script>
 </body>

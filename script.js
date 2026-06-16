@@ -768,6 +768,29 @@ const audioPlayer = document.querySelector("#audioPlayer");
 const youtubeTrack = document.querySelector("#youtubeTrack");
 const nextTrack = document.querySelector("#nextTrack");
 
+function formatLyrics(rawLyrics) {
+  const blocks = [];
+  let current = { label: "Lyrics", lines: [] };
+  rawLyrics.split("\n").forEach((line) => {
+    const trimmed = line.trim();
+    const sectionMatch = trimmed.match(/^\[(.+)\]$/);
+    if (sectionMatch) {
+      if (current.lines.length) blocks.push(current);
+      current = { label: sectionMatch[1], lines: [] };
+      return;
+    }
+    if (trimmed) current.lines.push(trimmed);
+  });
+  if (current.lines.length) blocks.push(current);
+
+  lyricsText.innerHTML = blocks.map((block) => `
+    <section class="lyric-block">
+      <h4>${block.label}</h4>
+      <p>${block.lines.join("<br>")}</p>
+    </section>
+  `).join("");
+}
+
 function renderTrackList() {
   trackList.innerHTML = tracks.map((track, index) => `
     <button class="track-button ${index === activeIndex ? "is-active" : ""}" type="button" data-index="${index}" aria-current="${index === activeIndex ? "true" : "false"}">
@@ -787,7 +810,7 @@ function setTrack(index, shouldPlay = false) {
   trackTitle.textContent = track.title;
   trackTheme.textContent = `Theme: ${track.theme}`;
   trackSummary.textContent = track.summary;
-  lyricsText.textContent = track.lyrics;
+  formatLyrics(track.lyrics);
   audioPlayer.src = track.audio;
   youtubeTrack.href = track.youtube;
   renderTrackList();

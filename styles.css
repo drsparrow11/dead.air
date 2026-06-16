@@ -107,7 +107,7 @@ a { color: inherit; }
   font-family: var(--mono);
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  font-size: 13px;
+  font-size: 12px;
   text-decoration: none;
 }
 
@@ -129,7 +129,7 @@ a { color: inherit; }
 .site-header nav {
   display: flex;
   align-items: center;
-  gap: clamp(12px, 3vw, 34px);
+  gap: clamp(10px, 2.4vw, 30px);
   color: var(--muted);
 }
 
@@ -433,13 +433,155 @@ audio {
   text-transform: uppercase;
 }
 
-.lyrics-box pre {
-  white-space: pre-wrap;
-  margin: 20px 0 0;
+.lyrics-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.lyric-block {
+  border: 1px solid rgba(116, 199, 198, 0.16);
+  background: rgba(3, 8, 11, 0.68);
+  padding: 16px;
+}
+
+.lyric-block h4 {
+  margin: 0 0 10px;
+  color: var(--orange);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.lyric-block p {
+  margin: 0;
   color: #dbe7e4;
   font-family: var(--mono);
-  font-size: 15px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.dossier-section {
+  background:
+    linear-gradient(180deg, rgba(239, 106, 29, 0.05), transparent 34%),
+    rgba(2, 5, 7, 0.34);
+  border-block: 1px solid rgba(116, 199, 198, 0.14);
+}
+
+.dossier-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.dossier-card {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  padding: clamp(18px, 2.4vw, 28px);
+  min-height: 240px;
+  box-shadow: var(--shadow);
+}
+
+.dossier-card h3 {
+  margin-bottom: 16px;
+  font-family: var(--mono);
+  font-size: clamp(24px, 3vw, 44px);
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.dossier-card p, .dossier-card dd, .dossier-card li, .dossier-card blockquote {
+  color: #c5d1cf;
   line-height: 1.65;
+}
+
+.dev-note {
+  grid-column: span 3;
+}
+
+.review-card {
+  grid-column: span 3;
+}
+
+.journal-card, .recovery-card {
+  grid-column: span 2;
+}
+
+.socials-card {
+  grid-column: span 2;
+}
+
+.review-card dl {
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.review-card div {
+  border-bottom: 1px solid rgba(116, 199, 198, 0.12);
+  padding-bottom: 12px;
+}
+
+.review-card dt {
+  color: var(--orange);
+  font-family: var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.review-card dd {
+  margin: 5px 0 0;
+}
+
+.journal-card {
+  border-color: rgba(239, 106, 29, 0.5);
+}
+
+.journal-card blockquote {
+  margin: 0 0 18px;
+  font-family: var(--mono);
+}
+
+.stamp {
+  display: inline-flex;
+  border: 1px solid var(--orange);
+  color: var(--orange);
+  padding: 8px 10px;
+  transform: rotate(-3deg);
+  font-family: var(--mono);
+  letter-spacing: 0.16em;
+}
+
+.recovery-card ol {
+  margin: 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 12px;
+}
+
+.socials-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.socials-card a {
+  border: 1px solid rgba(116, 199, 198, 0.22);
+  padding: 14px;
+  color: var(--cyan);
+  font-family: var(--mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.socials-card a:hover {
+  border-color: var(--orange);
+  color: var(--amber);
 }
 
 .signal-steps {
@@ -555,20 +697,6 @@ audio {
   text-transform: uppercase;
 }
 
-.site-footer {
-  padding: 36px clamp(20px, 6vw, 76px) 48px;
-  border-top: 1px solid rgba(116, 199, 198, 0.16);
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.site-footer p {
-  max-width: 900px;
-}
-
 @media (max-width: 1020px) {
   .status-card {
     position: static;
@@ -587,6 +715,22 @@ audio {
 
   .gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dossier-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dev-note,
+  .review-card,
+  .journal-card,
+  .recovery-card,
+  .socials-card {
+    grid-column: auto;
+  }
+
+  .lyrics-grid {
+    grid-template-columns: 1fr;
   }
 }
 
