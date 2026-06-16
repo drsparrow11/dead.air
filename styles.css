@@ -435,32 +435,22 @@ audio {
 
 .lyrics-grid {
   margin-top: 20px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  max-width: 760px;
+  border-left: 1px solid rgba(239, 106, 29, 0.58);
+  padding: 8px 0 8px clamp(18px, 3vw, 34px);
 }
 
-.lyric-block {
-  border: 1px solid rgba(116, 199, 198, 0.16);
-  background: rgba(3, 8, 11, 0.68);
-  padding: 16px;
-}
-
-.lyric-block h4 {
-  margin: 0 0 10px;
-  color: var(--orange);
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.lyric-block p {
-  margin: 0;
+.lyrics-grid p {
+  margin: 0 0 26px;
   color: #dbe7e4;
   font-family: var(--mono);
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: clamp(15px, 1.3vw, 17px);
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+}
+
+.lyrics-grid p:last-child {
+  margin-bottom: 0;
 }
 
 .dossier-section {
@@ -729,9 +719,6 @@ audio {
     grid-column: auto;
   }
 
-  .lyrics-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 680px) {
