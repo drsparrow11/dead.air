@@ -103,7 +103,7 @@ a { color: inherit; }
   backdrop-filter: blur(18px);
 }
 
-.brand, .site-header nav, .youtube-link {
+.brand, .chapter-link, .site-header nav, .youtube-link {
   font-family: var(--mono);
   text-transform: uppercase;
   letter-spacing: 0.14em;
@@ -116,6 +116,7 @@ a { color: inherit; }
   align-items: center;
   gap: 12px;
   color: var(--text);
+  flex: 0 0 auto;
 }
 
 .brand-mark {
@@ -124,6 +125,18 @@ a { color: inherit; }
   border: 2px solid var(--orange);
   transform: rotate(45deg);
   box-shadow: 0 0 20px rgba(239, 106, 29, 0.55);
+}
+
+.chapter-link {
+  margin-right: auto;
+  color: var(--amber);
+  opacity: 0.86;
+  white-space: nowrap;
+}
+
+.chapter-link:hover {
+  color: var(--cyan);
+  opacity: 1;
 }
 
 .site-header nav {
@@ -728,8 +741,18 @@ audio {
     flex-wrap: wrap;
   }
 
+  .chapter-link {
+    order: 2;
+    margin-left: auto;
+    font-size: 10px;
+    max-width: 190px;
+    line-height: 1.4;
+    text-align: right;
+    white-space: normal;
+  }
+
   .site-header nav {
-    order: 3;
+    order: 4;
     width: 100%;
     justify-content: space-between;
   }
