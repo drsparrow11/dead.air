@@ -1,0 +1,16 @@
+{
+  "name": "DEAD.AIR | The Vox Chronicles",
+  "short_name": "DEAD.AIR",
+  "description": "Vox's chapter in the SPARROW x ECHO narrative music project.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#05090c",
+  "theme_color": "#05090c",
+  "icons": [
+    {
+      "src": "assets/images/dead-air-album.png",
+      "sizes": "1024x1536",
+      "type": "image/png"
+    }
+  ]
+}

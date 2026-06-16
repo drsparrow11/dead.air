@@ -1,0 +1,8 @@
+SPARROW x ECHO
+Project: DEAD.AIR // The Vox Chronicles
+Site: https://drsparrow11.github.io/dead.air/
+
+Creative direction, writing, editing, curation, and final choices by Sparrow.
+AI-assisted tools were used in the creation of the music and/or visuals.
+
+Built as a static GitHub Pages site.
